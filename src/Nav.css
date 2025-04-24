@@ -1,0 +1,43 @@
+.navbar {
+    background-color: #8e8e8e;
+    padding: 10px;
+    font-family: 'Georgia', serif; /* Main serif font */
+  }
+  
+  .nav-list {
+    display: flex;
+    list-style: none;
+    justify-content: end;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Sans-serif font */
+  }
+  
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transition: width 0.3s ease;
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  .nav-link:hover {
+    color: #ccc;
+  }
+  
