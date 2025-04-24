@@ -1,6 +1,6 @@
 import React from 'react';
 import './Intro.css';
-import profilePic from './res/profile.png'; 
+import profilePic from './profile.png'; 
 
 function Intro() {
   return (
