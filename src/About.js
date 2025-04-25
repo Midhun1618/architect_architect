@@ -1,6 +1,5 @@
 import React from 'react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from './components/ui/tabs';
-import { Card, CardContent } from './components/ui/card';
 import { motion } from 'framer-motion';
 import './About.css';
 
@@ -56,24 +55,24 @@ export default function About() {
       <h1 className="about-title">About Me</h1>
       <Tabs defaultValue="education" className="w-full">
         <TabsList className="about-tabs">
-          <TabsTrigger value="education">Education</TabsTrigger>
-          <TabsTrigger value="language">Languages</TabsTrigger>
-          <TabsTrigger value="software">Software</TabsTrigger>
-          <TabsTrigger value="competitions">Competitions</TabsTrigger>
-          <TabsTrigger value="cgpa">CGPA</TabsTrigger>
-          <TabsTrigger value="certifications">Certifications</TabsTrigger>
-          <TabsTrigger value="achievements">Achievements</TabsTrigger>
-          <TabsTrigger value="extracurricular">Extra Curricular</TabsTrigger>
-          <TabsTrigger value="interests">Interests</TabsTrigger>
+          <TabsTrigger value="education" className="about-tab-trigger">Education</TabsTrigger>
+          <TabsTrigger value="language" className="about-tab-trigger">Languages</TabsTrigger>
+          <TabsTrigger value="software" className="about-tab-trigger">Software</TabsTrigger>
+          <TabsTrigger value="competitions" className="about-tab-trigger">Competitions</TabsTrigger>
+          <TabsTrigger value="cgpa" className="about-tab-trigger">CGPA</TabsTrigger>
+          <TabsTrigger value="certifications" className="about-tab-trigger">Certifications</TabsTrigger>
+          <TabsTrigger value="achievements" className="about-tab-trigger">Achievements</TabsTrigger>
+          <TabsTrigger value="extracurricular" className="about-tab-trigger">Extra Curricular</TabsTrigger>
+          <TabsTrigger value="interests" className="about-tab-trigger">Interests</TabsTrigger>
         </TabsList>
 
         {Object.keys(aboutData).map((key) => (
-          <TabsContent key={key} value={key}>
-            <Card className="about-card">
-              <CardContent className="about-card-content">
+          <TabsContent key={key} value={key} className="about-content">
+            <div className="about-card">
+              <div className="about-card-content">
                 <AnimatedList items={aboutData[key]} />
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </TabsContent>
         ))}
       </Tabs>

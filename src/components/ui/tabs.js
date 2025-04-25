@@ -1,46 +1,63 @@
 import React, { useState } from 'react';
-import '../../About.css';
+import './tabs.css';
 
-export function Tabs({ defaultValue, children, className }) {
+export function Tabs({ children, defaultValue }) {
   const [activeTab, setActiveTab] = useState(defaultValue);
 
+  const handleTabChange = (value) => {
+    setActiveTab(value);
+  };
+
   return (
-    <div className={className}>
-      {React.Children.map(children, child =>
-        child.type.displayName === 'TabsList'
-          ? React.cloneElement(child, { activeTab, setActiveTab })
-          : child.type.displayName === 'TabsContent' && child.props.value === activeTab
-            ? child
-            : null
-      )}
+    <div className="tabs-container">
+      <div className="tabs-list">
+        {React.Children.map(children, (child) => {
+          if (child.type === TabsList) {
+            return React.cloneElement(child, { activeTab, onTabChange: handleTabChange });
+          }
+          return child;
+        })}
+      </div>
+      <div className="tabs-content">
+        {React.Children.map(children, (child) => {
+          if (child.type === TabsContent) {
+            return React.cloneElement(child, { isActive: child.props.value === activeTab });
+          }
+          return child;
+        })}
+      </div>
     </div>
   );
 }
 
-export function TabsList({ children, activeTab, setActiveTab, className }) {
+export function TabsList({ children, activeTab, onTabChange }) {
   return (
-    <div className={`tabs-list ${className}`}>
-      {React.Children.map(children, child =>
-        React.cloneElement(child, { activeTab, setActiveTab })
-      )}
+    <div className="tabs-list-items">
+      {React.Children.map(children, (child) => {
+        if (child.type === TabsTrigger) {
+          return React.cloneElement(child, {
+            isActive: child.props.value === activeTab,
+            onClick: () => onTabChange(child.props.value),
+          });
+        }
+        return child;
+      })}
     </div>
   );
 }
-TabsList.displayName = 'TabsList';
 
-export function TabsTrigger({ value, children, activeTab, setActiveTab }) {
+export function TabsTrigger({ children, isActive, onClick }) {
   return (
     <button
-      className={`tabs-trigger ${activeTab === value ? 'active' : ''}`}
-      onClick={() => setActiveTab(value)}
+      className={`tabs-trigger ${isActive ? 'active' : ''}`}
+      onClick={onClick}
     >
       {children}
     </button>
   );
 }
-TabsTrigger.displayName = 'TabsTrigger';
 
-export function TabsContent({ value, children }) {
-  return <div className="tabs-content">{children}</div>;
+export function TabsContent({ children, isActive }) {
+  if (!isActive) return null;
+  return <div className="tabs-content-item">{children}</div>;
 }
-TabsContent.displayName = 'TabsContent';

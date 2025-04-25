@@ -1,0 +1,40 @@
+.tabs-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .tabs-list {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px solid #e2e8f0;
+    margin-bottom: 1rem;
+  }
+  
+  .tabs-list-items {
+    display: flex;
+  }
+  
+  .tabs-trigger {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #4b5563;
+    transition: color 0.3s;
+  }
+  
+  .tabs-trigger.active {
+    color: #1f2937;
+    border-bottom: 2px solid #1f2937;
+  }
+  
+  .tabs-content {
+    padding: 1rem;
+  }
+  
+  .tabs-content-item {
+    display: block;
+  }
+  
