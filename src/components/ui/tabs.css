@@ -1,0 +1,29 @@
+/* Basic styles for Tabs */
+.tabs-list {
+    display: flex;
+    flex-direction: column;  /* Vertically aligned tabs */
+    gap: 10px;
+  }
+  
+  .tabs-trigger {
+    padding: 12px 20px;
+    cursor: pointer;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .tabs-trigger:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-3px);
+  }
+  
+  .tabs-content {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  

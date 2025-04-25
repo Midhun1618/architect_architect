@@ -1,5 +1,4 @@
-import React from 'react';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from './components/ui/tabs';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import './About.css';
 
@@ -26,10 +25,10 @@ const aboutData = {
     'Sketchup – Milan School of Design 2022'
   ],
   achievements: [
-    'Branch Representative – Architecture Department 2023',
-    'Treasurer – ADIZYA ‘24, NIT Calicut Fest',
-    'Props & Design PAD Head – RAGAM ‘25, NIT Calicut Cultural Fest',
-    'Light & Sounds Head LAS – RAGAM ‘25, NIT Calicut Cultural Fest'
+    "Branch Representative – Architecture Department 2023",
+    "Treasurer – ADIZYA '24, NIT Calicut Fest",
+    "Props & Design PAD Head – RAGAM '25, NIT Calicut Cultural Fest",
+    "Light & Sounds Head LAS – RAGAM '25, NIT Calicut Cultural Fest"
   ],
   extracurricular: [
     'National Service Scheme 2023 – Active Member',
@@ -39,43 +38,94 @@ const aboutData = {
   interests: ['Art (Painting – All Mediums)', 'Carpentry', 'Model Making']
 };
 
+const tabVariants = {
+  hidden: { opacity: 0, y: 10 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.3 } }
+};
+
+const listItemVariants = {
+  hidden: { opacity: 0, x: -20 },
+  visible: (i) => ({
+    opacity: 1,
+    x: 0,
+    transition: { delay: i * 0.05, duration: 0.3 }
+  })
+};
+
 const AnimatedList = ({ items }) => (
-  <ul className="about-list">
+  <motion.ul 
+    className="about-list"
+    initial="hidden"
+    animate="visible"
+    variants={{
+      visible: {
+        transition: { staggerChildren: 0.05 }
+      }
+    }}
+  >
     {items.map((item, idx) => (
-      <motion.li key={idx} initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: idx * 0.05 }}>
+      <motion.li 
+        key={idx}
+        custom={idx}
+        variants={listItemVariants}
+        className="about-list-item"
+      >
+        <div className="list-marker"></div>
         {item}
       </motion.li>
     ))}
-  </ul>
+  </motion.ul>
 );
 
 export default function About() {
+  const [activeTab, setActiveTab] = useState('education');
+  
   return (
-    <div className="about-container">
-      <h1 className="about-title">About Me</h1>
-      <Tabs defaultValue="education" className="w-full">
-        <TabsList className="about-tabs">
-          <TabsTrigger value="education" className="about-tab-trigger">Education</TabsTrigger>
-          <TabsTrigger value="language" className="about-tab-trigger">Languages</TabsTrigger>
-          <TabsTrigger value="software" className="about-tab-trigger">Software</TabsTrigger>
-          <TabsTrigger value="competitions" className="about-tab-trigger">Competitions</TabsTrigger>
-          <TabsTrigger value="cgpa" className="about-tab-trigger">CGPA</TabsTrigger>
-          <TabsTrigger value="certifications" className="about-tab-trigger">Certifications</TabsTrigger>
-          <TabsTrigger value="achievements" className="about-tab-trigger">Achievements</TabsTrigger>
-          <TabsTrigger value="extracurricular" className="about-tab-trigger">Extra Curricular</TabsTrigger>
-          <TabsTrigger value="interests" className="about-tab-trigger">Interests</TabsTrigger>
-        </TabsList>
-
-        {Object.keys(aboutData).map((key) => (
-          <TabsContent key={key} value={key} className="about-content">
-            <div className="about-card">
-              <div className="about-card-content">
-                <AnimatedList items={aboutData[key]} />
-              </div>
-            </div>
-          </TabsContent>
-        ))}
-      </Tabs>
-    </div>
+    <motion.div 
+      className="about-container"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      <motion.h1 
+        className="about-title"
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.2, duration: 0.5 }}
+      >
+        About Me
+      </motion.h1>
+      
+      <div className="about-grid-container">
+        <div className="about-tabs-list">
+          {Object.keys(aboutData).map((key) => (
+            <motion.button
+              key={key}
+              className={`about-tab ${activeTab === key ? 'active' : ''}`}
+              onClick={() => setActiveTab(key)}
+              variants={tabVariants}
+              initial="hidden"
+              animate="visible"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              {key.charAt(0).toUpperCase() + key.slice(1)}
+            </motion.button>
+          ))}
+        </div>
+        
+        <motion.div 
+          className="about-content"
+          key={activeTab}
+          initial={{ opacity: 0, x: 10 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <div className="about-card">
+            <AnimatedList items={aboutData[activeTab]} />
+          </div>
+        </motion.div>
+      </div>
+    </motion.div>
   );
 }

@@ -1,62 +1,102 @@
-/* About container */
 .about-container {
-    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'Inter', sans-serif;
   }
   
-  /* Styling the Tabs list */
-  .about-tabs {
+  .about-title {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2d3748;
+    position: relative;
+  }
+  
+  .about-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: #4a5568;
+  }
+  
+  .about-grid-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+  }
+  
+  .about-tabs-list {
     display: flex;
-    flex-direction: column; /* Align tabs vertically */
-    gap: 10px;
+    flex-direction: column;
+    gap: 0.5rem;
   }
   
-  /* Tab trigger styling */
-  .about-tab-trigger {
-    background-color: #f1f1f1;
-    padding: 10px;
+  .about-tab {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #4a5568;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    border-radius: 4px;
+    transition: all 0.3s ease;
+    padding: 0.8rem 1.2rem;
+    background: none;
+    border: none;
+    text-align: left;
+    text-transform: capitalize;
+    border-left: 3px solid transparent;
   }
   
-  .about-tab-trigger:hover {
-    background-color: #ccc;
+  .about-tab:hover {
+    color: #2d3748;
+    background: #f7fafc;
   }
   
-  /* Hovering over the tab shows the corresponding content */
-  .about-tabs .about-tab-trigger:hover + .about-content {
-    display: block;
+  .about-tab.active {
+    color: #2d3748;
+    font-weight: 600;
+    border-left: 3px solid #2d3748;
+    background: #f7fafc;
   }
   
-  /* Content styling */
   .about-content {
-    display: none; /* Hide content by default */
+    margin-top: 0;
   }
   
-  .about-tabs .about-tab-trigger:hover ~ .about-content {
-    display: block;
-  }
-  
-  /* Card styles */
   .about-card {
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: white;
+    border-radius: 0;
+    padding: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e2e8f0;
+    height: 100%;
   }
   
-  .about-card-content {
-    margin-top: 10px;
-  }
+  /* ... (keep the rest of the CSS the same) */
   
-  /* Animated list */
-  .about-list {
-    list-style-type: none;
-    padding: 0;
+  @media (max-width: 768px) {
+    .about-grid-container {
+      grid-template-columns: 1fr;
+    }
+    
+    .about-tabs-list {
+      flex-direction: row;
+      overflow-x: auto;
+      padding-bottom: 1rem;
+    }
+    
+    .about-tab {
+      border-left: none;
+      border-bottom: 3px solid transparent;
+      white-space: nowrap;
+    }
+    
+    .about-tab.active {
+      border-left: none;
+      border-bottom: 3px solid #2d3748;
+    }
   }
-  
-  .about-list li {
-    margin-bottom: 10px;
-    font-size: 16px;
-  }
-  
