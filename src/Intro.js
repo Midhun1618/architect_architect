@@ -11,6 +11,16 @@ function Intro() {
       <div className="intro-right">
         <h1 className="intro-name">Rahul Prasad</h1>
         <p className="intro-subtitle">Architect Student | NIT Calicut</p>
+        <p className="intro-subtitle">I am a third-year student  pursuing architecture 
+from  National Institute of Technology Calicut 
+with a strong foundation in architectural design, 
+visualization, and hands-on project experience. 
+Through active involvement in design competitions 
+and leadership roles in college events, I have 
+developed both creative and technical skills. I am 
+currently seeking an internship opportunity to gain 
+professional exposure, contribute to real-world 
+projects, and grow as a designer.</p>
         <div className="intro-links">
           <a href="#portfolio" className="intro-link">Portfolio</a>
           <a href="#about" className="intro-link">About Me</a>
