@@ -1,63 +1,78 @@
+
 .project-hero {
     position: relative;
     width: 100%;
     height: 300px;
     overflow: hidden;
-    gap: 1vw;
-}
-
-.project-hero img {
+  }
+  
+  .project-hero img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-.project-title-float {
+  }
+  .project-title-float {
     position: absolute;
-    top: 50%;   /* Initially at the center */
-    left: 50%;  /* Initially at the center */
-    transform: translate(-50%, -50%);  /* Centers the title */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-size: 2rem;
     font-weight: bold;
     color: white;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     transition: all 0.4s ease;
-}
-
-.project-card.scrolled .project-title-float {
-    top: auto;  /* Reset the top property */
-    bottom: 20px;  /* Position at the bottom */
-    left: 20px;    /* Position at the left */
-    transform: translate(0, 0); /* No need to center */
+    z-index: 2; 
+  }
+  
+  .project-card.scrolled .project-title-float {
+    top: auto;
+    bottom: 20px;
+    left: 20px;
+    transform: translate(0, 0);
     font-size: 1.25rem;
     text-shadow: none;
-    color: #1f2937; /* Dark gray when scrolled */
-}
-
-.project-body {
-    padding: 1.5rem;
-    background-color: #fff; /* White background that "covers" the image */
-}
-
-.project-quote {
+    color: #1f2937; /* Dark gray */
+  }
+  
+  /* Overlapping the body content over the image */
+  .project-body {
+    margin-top: -60px; /* Pulls the content over the image */
+    position: relative;
+    z-index: 3; /* Ensures it's above the image */
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Optional: Add spacing below the project card */
+  .project-card {
+    margin-bottom: 3rem;
+  }
+  
+  /* Quote Section */
+  .project-quote {
     font-style: italic;
     font-size: 1.1rem;
     color: #4b5563;
     margin: 1rem 0;
-}
-
-.project-story {
+  }
+  
+  /* Story Section */
+  .project-story {
     color: #374151;
     font-size: 1rem;
     line-height: 1.6;
-}
-
-.project-details {
+  }
+  
+  /* Project Details */
+  .project-details {
     margin-top: 0.75rem;
     font-size: 0.9rem;
     color: #6b7280;
-}
-
-.project-details strong {
+  }
+  
+  .project-details strong {
     color: #374151;
-}
+  }
+  

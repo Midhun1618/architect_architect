@@ -1,15 +1,17 @@
 .navbar {
-    background-color: #8e8e8e;
-    padding: 10px;
+    background-color: rgb(69, 69, 69);
+    padding:2rem;
     font-family: 'Georgia', serif; /* Main serif font */
+    font-size: 1.3rem;
+    gap: 10px;
   }
   
   .nav-list {
     display: flex;
     list-style: none;
-    justify-content: end;
+    justify-content: center;
     margin: 0;
-    padding: 0;
+    padding: 2rem;
   }
   
   .nav-link {
@@ -39,5 +41,6 @@
   
   .nav-link:hover {
     color: #ccc;
+
   }
   

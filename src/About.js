@@ -1,5 +1,15 @@
 import React, { useEffect, useRef } from 'react';
 import './About.css';
+import autocad from './autocad-logo.png'; 
+import sketchup from './sketchup-logo.png'; 
+import revit from './revit-logo.png'; 
+import d5 from './d5-logo.png'; 
+import twinmotion from './twinmotion-logo.png'; 
+import ps from './photoshop-logo.png'; 
+import il from './illustrator-logo.png'; 
+import indesign from './indesign-logo.png'; 
+import msoffice from './msoffice-logo.png'; 
+import canva from './canva-logo.png'; 
 
 const About = () => {
   const progressBarsRef = useRef([]);
@@ -69,16 +79,16 @@ const About = () => {
   ];
 
   const software = [
-    { name: 'Autocad', img: 'autocad-logo.png' },
-    { name: 'Sketchup', img: 'sketchup-logo.png' },
-    { name: 'Revit', img: 'revit-logo.png' },
-    { name: 'D5', img: 'd5-logo.png' },
-    { name: 'Twinmotion', img: 'twinmotion-logo.png' },
-    { name: 'Photoshop', img: 'photoshop-logo.png' },
-    { name: 'Illustrator', img: 'illustrator-logo.png' },
-    { name: 'Indesign', img: 'indesign-logo.png' },
-    { name: 'MS Office', img: 'office-logo.png' },
-    { name: 'Canva', img: 'canva-logo.png' }
+    { name: 'Autocad', img: autocad },
+    { name: 'Sketchup', img: sketchup },
+    { name: 'Revit', img: revit },
+    { name: 'D5', img: d5 },
+    { name: 'Twinmotion', img: twinmotion },
+    { name: 'Photoshop', img: ps },
+    { name: 'Illustrator', img: il },
+    { name: 'Indesign', img: indesign },
+    { name: 'MS Office', img: msoffice },
+    { name: 'Canva', img: canva }
   ];
 
   const extracurricular = [
