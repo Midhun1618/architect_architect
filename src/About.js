@@ -148,13 +148,13 @@ const About = () => {
         
         <div className="competitions-container">
           <h3>Competitions</h3>
-          <ul className="competitions-list">
+          <div className="competitions-list">
             {competitions.map((comp, index) => (
               <li key={index} className="competition-item">
                 <span>{comp}</span>
               </li>
             ))}
-          </ul>
+          </div>
         </div>
       </div>
       
@@ -181,6 +181,7 @@ const About = () => {
                 <span>{ach}</span>
               </li>
             ))}
+
           </div>
         </div>
       </div>

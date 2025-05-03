@@ -1,4 +1,22 @@
-.App{
+.App {
   background-color: rgb(69, 69, 69);
-  
+  min-height: 100vh;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: white;
+}
+
+/* 🔁 Responsive tweaks */
+@media (max-width: 768px) {
+  .App {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
 }

@@ -1,46 +1,78 @@
 .navbar {
-    background-color: rgb(69, 69, 69);
-    padding:2rem;
-    font-family: 'Georgia', serif; /* Main serif font */
-    font-size: 1.3rem;
-    gap: 10px;
-  }
-  
-  .nav-list {
-    display: flex;
-    list-style: none;
-    justify-content: center;
-    margin: 0;
-    padding: 2rem;
-  }
-  
-  .nav-link {
-    color: white;
-    text-decoration: none;
-    margin-right: 20px;
-    position: relative;
-    padding-bottom: 4px;
-    transition: color 0.3s ease;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Sans-serif font */
-  }
-  
-  .nav-link::after {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: white;
-    transition: width 0.3s ease;
-  }
-  
-  .nav-link:hover::after {
-    width: 100%;
-  }
-  
-  .nav-link:hover {
-    color: #ccc;
+  background-color: rgb(69, 69, 69);
+  padding: 0;
+  font-family: 'Georgia', serif;
+  font-size: 1.3rem;
+  gap: 10px;
+  position: relative;
+}
 
+.nav-list {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  margin: 0;
+  padding: 1.3rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: #ccc;
+}
+
+/* 🔥 Mobile Responsiveness */
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgb(69, 69, 69);
+    display: none;
   }
-  
+
+  .nav-list.show {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
