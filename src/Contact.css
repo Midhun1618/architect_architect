@@ -57,12 +57,19 @@
   .contact-info {
     flex: 1;
     min-width: 300px;
+    max-width: 48%;
     color: #fff;
     padding: 1rem;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
   }
+.contact-form {
+  flex: 1;
+  min-width: 300px;
+  max-width: 48%; /* add this line */
+}
+
   
   .info-item {
     display: flex;
