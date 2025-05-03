@@ -4,6 +4,7 @@ import Nav from './Nav'
 import Intro from './Intro.js'
 import Portfolio from './Portfolio.js'
 import About from './About.js'
+import Contact from './Contact.js'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Intro/>
       <Portfolio/>
       <About/>
+      <Contact/>
       
     </div>
   );
