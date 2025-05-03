@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './Portfolio.css';
 import hridaya_main from './hridya.png'; // Replace with different images if available
+import pn1 from './pnav1.png';
+import pn2 from './pnav2.png';
+import pn3 from './pnav3.png';
+import pn4 from './pnav4.png';
 
 function Portfolio() {
   const [scrolled, setScrolled] = useState({});
@@ -34,19 +38,22 @@ function Portfolio() {
       {/* Image Navigation Buttons */}
       <div className="project-gallery">
         <div className="gallery-item" onClick={() => scrollToProject(0)}>
-          <img src={hridaya_main} alt="Hridaya" className="gallery-image" />
-          <div className="gallery-title">Hridaya – A Residence in Goa</div>
+          <img src={pn1} alt="Hridaya" className="gallery-image" />
+          <div className="gallery-title">
+            01 - Hridaya | Residence
+            
+          </div>
         </div>
         <div className="gallery-item" onClick={() => scrollToProject(1)}>
-          <img src={hridaya_main} alt="Elen Homes" className="gallery-image" />
+          <img src={pn2} alt="Elen Homes" className="gallery-image" />
           <div className="gallery-title">Elen Homes – Low-Rise Apartments</div>
         </div>
         <div className="gallery-item" onClick={() => scrollToProject(2)}>
-          <img src={hridaya_main} alt="Phadaro Sa Hub" className="gallery-image" />
+          <img src={pn3} alt="Phadaro Sa Hub" className="gallery-image" />
           <div className="gallery-title">Phadaro Sa Hub – Convention Centre</div>
         </div>
         <div className="gallery-item" onClick={() => scrollToProject(2)}>
-          <img src={hridaya_main} alt="Bonus Project" className="gallery-image" />
+          <img src={pn4} alt="Bonus Project" className="gallery-image" />
           <div className="gallery-title">Bonus Project</div>
         </div>
       </div>
