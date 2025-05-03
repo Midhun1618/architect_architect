@@ -9,7 +9,7 @@
     overflow: hidden;
     margin: 2rem auto;
     max-width: 1200px;
-    background-image: url('/api/placeholder/1200/600');
+    /* background-image: url('/api/placeholder/1200/600'); */
     background-size: cover;
     background-position: center;
   }
