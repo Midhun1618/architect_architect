@@ -13,6 +13,8 @@ html {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   gap: 2rem; /* No padding between images */
 }
 
@@ -49,7 +51,7 @@ html {
 }
 .project-number {
   display: block;
-  font-size: 40px;
+  font-size: 3rem;
   font-weight: 700;
   line-height: 1;
   letter-spacing: -1px;
@@ -57,9 +59,13 @@ html {
 
 .project-name {
   display: block;
-  font-size: 22px;
+  font-size: 2rem;
   font-weight: 600;
   line-height: 1.2;
+}
+.project-subtitle{
+  display: block;
+  font-size: 1rem;
 }
 
 
