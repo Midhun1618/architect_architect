@@ -89,7 +89,7 @@ function Portfolio() {
                 <div className="drawer-item">
                   <img src={imgd1}  alt="Building Mass" className="drawer-img" />
                   <h4>Building Mass</h4>
-                  <p>Starting with a solid volume to sculpt around the natural form.</p>
+                  <p>The process starts with a single, unified mass, forming the foundation for design exploration. </p>
                 </div>
                 <div className="drawer-item">
                   <img src={imgd2} alt="Creating Void" className="drawer-img" />
@@ -99,7 +99,7 @@ function Portfolio() {
                 <div className="drawer-item">
                   <img src={imgd3}  alt="Core Concept" className="drawer-img" />
                   <h4>Core Concept</h4>
-                  <p>The heart of the design — a living tree, not just a centerpiece.</p>
+                  <p>Division of spaces around a tree which caters as the soul of the residence.</p>
                 </div>
               </div>
             </div>

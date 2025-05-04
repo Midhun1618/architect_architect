@@ -110,10 +110,10 @@ html {
 }
 
 .project-title-float {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  /* position: absolute; */
+  /* top: 50%;
+  left: 50%; */
+  /* transform: translate(-50%, -50%); */
   font-size: 2rem;
   font-weight: bold;
   color: white;
@@ -122,16 +122,15 @@ html {
   z-index: 2;
 }
 
-.project-card.scrolled .project-title-float {
+/* .project-card.scrolled .project-title-float {
   top: auto;
   bottom: 20px;
   left: 20px;
-  transform: translate(0, 0);
   font-size: 1.25rem;
   text-shadow: none;
   color: #1f2937;
   /* Dark gray */
-}
+/* } */ 
 
 /* Overlapping the body content over the image */
 .project-body {
@@ -207,21 +206,13 @@ html {
 }
 
 .project-container:hover .project-hero img {
-  width: 78%;
+  width: 80%;
   transition: width 0.4s ease-in-out;
 }
 
-/* Floating title */
-.project-title-float {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 2rem;
-  font-weight: bold;
-  color: white;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  z-index: 2;
+.project-container:hover .project-title-float {
+  transform: (100%,100%);
+  transition: transform 0.4s ease-in-out;
 }
 
 /* Drawer hidden by default */
