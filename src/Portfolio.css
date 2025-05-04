@@ -1,6 +1,7 @@
 html {
   scroll-behavior: smooth;
 }
+
 .section-title {
   text-align: center;
   font-size: 2rem;
@@ -9,13 +10,15 @@ html {
   position: relative;
   padding-top: 6rem;
 }
+
 .project-gallery {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding-top: 3rem;
-  padding-bottom: 3rem;
-  gap: 2rem; /* No padding between images */
+  padding-bottom: 10rem;
+  gap: 2rem;
+  /* No padding between images */
 }
 
 .gallery-item {
@@ -49,6 +52,7 @@ html {
   font-family: 'Arial', sans-serif;
   margin-top: 10px;
 }
+
 .project-number {
   display: block;
   font-size: 3rem;
@@ -63,9 +67,11 @@ html {
   font-weight: 600;
   line-height: 1.2;
 }
-.project-subtitle{
+
+.project-subtitle {
   display: block;
   font-size: 1rem;
+  font-weight: 0;
 }
 
 
@@ -81,79 +87,206 @@ html {
 
 
 .project-hero {
-    position: relative;
-    width: 100%;
-    height: 300px;
-    overflow: hidden;
-  }
-  
-  .project-hero img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .project-title-float {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 2rem;
-    font-weight: bold;
-    color: white;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    transition: all 0.4s ease;
-    z-index: 2; 
-  }
-  
-  .project-card.scrolled .project-title-float {
-    top: auto;
-    bottom: 20px;
-    left: 20px;
-    transform: translate(0, 0);
-    font-size: 1.25rem;
-    text-shadow: none;
-    color: #1f2937; /* Dark gray */
-  }
-  
-  /* Overlapping the body content over the image */
-  .project-body {
-    margin-top: -60px; /* Pulls the content over the image */
-    position: relative;
-    z-index: 3; /* Ensures it's above the image */
-    padding: 2rem;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Optional: Add spacing below the project card */
-  .project-card {
-    margin-bottom: 3rem;
-  }
-  
-  /* Quote Section */
-  .project-quote {
-    font-style: italic;
-    font-size: 1.1rem;
-    color: #4b5563;
-    margin: 1rem 0;
-  }
-  
-  /* Story Section */
-  .project-story {
-    color: #374151;
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-  
-  /* Project Details */
-  .project-details {
-    margin-top: 0.75rem;
-    font-size: 0.9rem;
-    color: #6b7280;
-  }
-  
-  .project-details strong {
-    color: #374151;
-  }
-  
+  position: relative;
+  width: 100%;
+  height: 20rem;
+  overflow: hidden;
+  object-fit: cover;
+  transition: all 0.4s ease-in-out
+}
+
+.project-hero img {
+  position: relative;
+  width: 100%;
+  height: 30rem;
+  object-fit: cover;
+  transition: all 0.4s ease-in-out;
+}
+
+.project-hero:hover {
+  width: 100%;
+  height: 30rem;
+  transition: all 0.4s ease-in-out
+}
+
+.project-title-float {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s ease;
+  z-index: 2;
+}
+
+.project-card.scrolled .project-title-float {
+  top: auto;
+  bottom: 20px;
+  left: 20px;
+  transform: translate(0, 0);
+  font-size: 1.25rem;
+  text-shadow: none;
+  color: #1f2937;
+  /* Dark gray */
+}
+
+/* Overlapping the body content over the image */
+.project-body {
+  margin-top: -60px;
+  /* Pulls the content over the image */
+  position: relative;
+  z-index: 3;
+  /* Ensures it's above the image */
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional: Add spacing below the project card */
+.project-card {
+  margin-bottom: 3rem;
+}
+
+/* Quote Section */
+.project-quote {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #4b5563;
+  margin: 1rem 0;
+}
+
+/* Story Section */
+.project-story {
+  color: #374151;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Project Details */
+.project-details {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.project-details strong {
+  color: #374151;
+}
+
+.project-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.project-hero {
+  position: relative;
+  width: 100%;
+  height: 20rem;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+}
+
+/* Image default state */
+.project-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: height 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+/* Hover effect increases height */
+.project-container:hover .project-hero {
+  height: 40rem;
+  transition: height 0.4s ease-in-out;
+}
+
+.project-container:hover .project-hero img {
+  width: 78%;
+  transition: width 0.4s ease-in-out;
+}
+
+/* Floating title */
+.project-title-float {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+/* Drawer hidden by default */
+.hover-drawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%; /* full height of parent */
+  width: 300px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; /* spreads all 3 items evenly */
+  padding: 20px;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.4s ease;
+  z-index: 3;
+}
+
+
+/* Drawer appears on hover */
+.project-container:hover .hover-drawer {
+  transform: translateX(0);
+}
+.project-hero:hover .hover-drawer {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+
+
+/* Drawer items */
+.drawer-item {
+  flex: 1; /* each takes equal height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 10px 0;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.drawer-img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+
+
+.drawer-item h4 {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #2d2d2d;
+}
+
+.drawer-item p {
+  font-size: 0.85rem;
+  color: #3f3f3f;
+}
