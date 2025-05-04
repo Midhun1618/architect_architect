@@ -42,9 +42,9 @@ function Portfolio() {
         <div className="gallery-item" onClick={() => scrollToProject(0)}>
         <img src={pn1} alt="Elen Homes" className="gallery-image" />
           <div className="gallery-title">
-            <span className="project-number">02</span>
-            <span className="project-name">Elen Homes</span>
-            <span>Low-rise Apartments</span>
+            <span className="project-number">01</span>
+            <span className="project-name">Hridaya</span>
+            <span>Residence</span>
           </div>
         </div>
         <div className="gallery-item" onClick={() => scrollToProject(1)}>
@@ -58,15 +58,15 @@ function Portfolio() {
         <div className="gallery-item" onClick={() => scrollToProject(2)}>
         <img src={pn3} alt="Elen Homes" className="gallery-image" />
           <div className="gallery-title">
-            <span className="project-number">02</span>
-            <span className="project-name">Elen Homes</span>
-            <span>Low-rise Apartments</span>
+            <span className="project-number">03</span>
+            <span className="project-name">Phadaro sa Hub</span>
+            <span>Convention Centre</span>
           </div>
         </div>
         <div className="gallery-item" onClick={() => scrollToProject(2)}>
         <img src={pn4} alt="Elen Homes" className="gallery-image" />
           <div className="gallery-title">
-            <span className="project-number">02</span>
+            <span className="project-number">04</span>
             <span className="project-name">Working Drawing</span>
             <span>AutoCAD drawings</span>
           </div>
