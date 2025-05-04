@@ -34,27 +34,42 @@ function Portfolio() {
   };
 
   return (
+
     <div>
+      <h2 className="section-title">Portfolio</h2>
       {/* Image Navigation Buttons */}
       <div className="project-gallery">
         <div className="gallery-item" onClick={() => scrollToProject(0)}>
-          <img src={pn1} alt="Hridaya" className="gallery-image" />
+        <img src={pn1} alt="Elen Homes" className="gallery-image" />
           <div className="gallery-title">
-            01 - Hridaya | Residence
-            
+            <span className="project-number">02</span>
+            <span className="project-name">Elen Homes</span>
+            <span>Low-rise Apartments</span>
           </div>
         </div>
         <div className="gallery-item" onClick={() => scrollToProject(1)}>
           <img src={pn2} alt="Elen Homes" className="gallery-image" />
-          <div className="gallery-title">Elen Homes – Low-Rise Apartments</div>
+          <div className="gallery-title">
+            <span className="project-number">02</span>
+            <span className="project-name">Elen Homes</span>
+            <span>Low-rise Apartments</span>
+          </div>
         </div>
         <div className="gallery-item" onClick={() => scrollToProject(2)}>
-          <img src={pn3} alt="Phadaro Sa Hub" className="gallery-image" />
-          <div className="gallery-title">Phadaro Sa Hub – Convention Centre</div>
+        <img src={pn3} alt="Elen Homes" className="gallery-image" />
+          <div className="gallery-title">
+            <span className="project-number">02</span>
+            <span className="project-name">Elen Homes</span>
+            <span>Low-rise Apartments</span>
+          </div>
         </div>
         <div className="gallery-item" onClick={() => scrollToProject(2)}>
-          <img src={pn4} alt="Bonus Project" className="gallery-image" />
-          <div className="gallery-title">Bonus Project</div>
+        <img src={pn4} alt="Elen Homes" className="gallery-image" />
+          <div className="gallery-title">
+            <span className="project-number">02</span>
+            <span className="project-name">Working Drawing</span>
+            <span>AutoCAD drawings</span>
+          </div>
         </div>
       </div>
       <div className="portfolio-container">
